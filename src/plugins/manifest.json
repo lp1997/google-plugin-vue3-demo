@@ -1,5 +1,6 @@
 {
     "manifest_version": 2,
+    "author": "linpiao",
     "name": "demo",
     "description": "工具",
     "version": "1.0.0",
