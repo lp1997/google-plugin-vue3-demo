@@ -2,30 +2,31 @@
 
 ## Project setup
 
-
+```
 npm install
-
+```
 
 ### Compiles and hot-reloads for development
 
-
+```
 npm run watch
-
+```
 
 ### Compiles and minifies for production
 
-
+```
 npm run build
-
+```
 
 ### Lints and fixes files
 
-
+```
 npm run lint
-
+```
 
 ### 文件结构
 
+```
 src
 ├─assets -- 资源文件
   ├─icon128.png
@@ -51,6 +52,8 @@ src
 └─utils -- 工具函数
   ├─chromeUtils.js -- chrome API相关函数
   └─hotReload.js -- 热打包配置文件，npm run watch依赖
+
+```
 
 ### 相关学习文档
 
