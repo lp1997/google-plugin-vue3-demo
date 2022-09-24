@@ -5,7 +5,7 @@
         <el-tab-pane :name="item.id" :label="item.name" v-for="item in tabList" :key="item.id"></el-tab-pane>
       </el-tabs>
     </div>
-    <el-scrollbar max-height="550px" ref="scrollRef">
+    <el-scrollbar max-height="550px">
       <div class="page-com">
         <Main v-show="tabIndex === 1"/>
         <Hello v-show="tabIndex === 2"/>
@@ -19,7 +19,6 @@ import { ref } from 'vue'
 import Main from './pages/PageMain.vue'
 import Hello from './pages/PageHello.vue'
 
-const scrollRef = ref('')
 const tabIndex = ref(1)
 const tabList = ref([
   {
@@ -37,7 +36,7 @@ const tabList = ref([
 .google-plugin-main{
   position: relative
   min-width: 500px
-  min-height: 300px
+  min-height: 400px
   .tabs{
     width: 100%
     .el-tabs__content{
