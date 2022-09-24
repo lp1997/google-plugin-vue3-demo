@@ -15,13 +15,13 @@
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue'
+import { ref } from 'vue'
 import Main from './pages/PageMain.vue'
 import Hello from './pages/PageHello.vue'
 
 const scrollRef = ref('')
 const tabIndex = ref(1)
-const tabList = reactive([
+const tabList = ref([
   {
     id: 1,
     name: 'tab1'
