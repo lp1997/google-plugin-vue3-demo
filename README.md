@@ -29,8 +29,8 @@ npm run lint
 >src
 >├─assets -- `资源文件`
 >>├─icon128.png
-  ├─icon16.png
-  └─icon48.png
+>├─icon16.png
+>>└─icon48.png
 >
 >├─background -- `插件背景文件（浏览器运行则一直在运行/通信存在于插件方）`
 >>├─background.js -- `通用事件`
