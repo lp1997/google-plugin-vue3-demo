@@ -16,7 +16,7 @@ const copyFiles = [
     to: path.resolve('dist/js')
   },
   {
-    from: path.resolve('src/plugins/inject.js'),
+    from: path.resolve('src/plugins/main.js'),
     to: path.resolve('dist/js')
   }
 ]
@@ -44,17 +44,18 @@ chromeName.forEach(name => {
 module.exports = {
   pages,
   productionSourceMap: false,
-  // 配置 content.js background.js
+  // 配置 background.js
   configureWebpack: {
     entry: {
-      background: './src/background/main.js'
+      background: './src/background/background.js',
+      menu: './src/background/menu.js'
     },
     output: {
       filename: 'js/[name].js'
     },
     plugins
   },
-  // 配置 content.css
+  // 配置 css
   css: {
     extract: {
       filename: 'css/[name].css'

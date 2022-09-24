@@ -9,7 +9,7 @@
 <script setup>
 import { ref } from 'vue'
 import QrcodeVue from 'qrcode.vue'
-import { getPageInfo } from '@/utils/comUtils'
+import { getPageInfo } from '@/utils/chromeUtils'
 
 const link = ref('')
 getPageInfo().then(tabs => {
