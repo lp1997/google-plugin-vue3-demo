@@ -32,7 +32,7 @@ src
   ├─icon128.png
   ├─icon16.png
   └─icon48.png
-├─background -- 插件背景文件（浏览器运行则一直在运行/通信存在于插件方）
+├─background -- 插件背景文件（浏览器运行则一直在运行/通信存在于浏览器方）
   ├─background.ts -- 通用事件
   └─menu.ts -- 鼠标右键菜单
 ├─js -- 引用的lib
