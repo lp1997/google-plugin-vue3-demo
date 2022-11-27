@@ -39,7 +39,7 @@ src
   └─lib
     └─jquery-2.1.3.min.js
 ├─plugins -- 打包的主要文件
-  ├─main.ts -- 运行于当前页面的js，可用于操控当前页面的内容，dom等（通信存在于web页面方）
+  ├─main.ts -- 运行于当前web页面的js，可用于操控当前页面，相当于在调试工具的控制台操作（通信存在于web页面方）
   ├─typeList.ts -- 定义类型
   └─manifest.json -- 配置文件（必须）
 ├─popup -- 插件页面（通信存在于插件方）
