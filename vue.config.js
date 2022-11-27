@@ -12,11 +12,7 @@ const copyFiles = [
     to: path.resolve('dist/assets')
   },
   {
-    from: path.resolve('src/js/lib/jquery-2.1.3.min.js'),
-    to: path.resolve('dist/js')
-  },
-  {
-    from: path.resolve('src/plugins/main.js'),
+    from: path.resolve('src/js/lib'),
     to: path.resolve('dist/js')
   }
 ]
@@ -35,8 +31,11 @@ const chromeName = ['popup']
 
 chromeName.forEach(name => {
   pages[name] = {
-    entry: `src/${name}/main.js`,
+    entry: `src/${name}/main.ts`,
     template: `src/${name}/index.html`,
+    resolve: {
+      extensions: ['.ts', '.js', '.vue', '.json']
+    },
     filename: `${name}.html`
   }
 })
@@ -47,13 +46,27 @@ module.exports = {
   // 配置 background.js
   configureWebpack: {
     entry: {
-      background: './src/background/background.js',
-      menu: './src/background/menu.js'
+      background: './src/background/background.ts',
+      menu: './src/background/menu.ts',
+      main: './src/plugins/main.ts'
     },
     output: {
       filename: 'js/[name].js'
     },
-    plugins
+    plugins,
+    resolve: { extensions: ['.ts', '.tsx', '.js', '.json'] },
+    module: {
+      rules: [
+        {
+          test: /.tsx?$/,
+          loader: 'ts-loader',
+          exclude: /node_modules/,
+          options: {
+            appendTsSuffixTo: [/.vue$/]
+          }
+        }
+      ]
+    }
   },
   // 配置 css
   css: {

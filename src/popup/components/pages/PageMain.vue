@@ -5,14 +5,17 @@
     </div>
   </div>
 </template>
-
-<script setup>
+<script lang="ts">
 import { ref } from 'vue'
 import QrcodeVue from 'qrcode.vue'
 import { getPageInfo } from '@/utils/chromeUtils'
-
-const link = ref('')
-getPageInfo().then(tabs => {
+export default {
+  name: 'PageMain'
+}
+</script>
+<script lang="ts" setup>
+const link = ref<string>('')
+getPageInfo().then((tabs:any) => {
   link.value = tabs[0].url
 })
 </script>

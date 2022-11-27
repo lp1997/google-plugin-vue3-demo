@@ -14,13 +14,14 @@
   </div>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 import { ref } from 'vue'
 import Main from './pages/PageMain.vue'
 import Hello from './pages/PageHello.vue'
+import { listItemType } from '@popup/typeList'
 
-const tabIndex = ref(1)
-const tabList = ref([
+const tabIndex = ref<number>(1)
+const tabList = ref<listItemType[]>([
   {
     id: 1,
     name: 'tab1'
