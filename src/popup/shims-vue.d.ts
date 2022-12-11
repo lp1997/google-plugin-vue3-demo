@@ -5,5 +5,5 @@ declare module '*.vue' {
   export default component
 }
 declare interface Window {
-  chrome: any
+  [propName:string] : any
 }

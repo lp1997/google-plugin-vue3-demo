@@ -1,14 +1,13 @@
 <template>
   <div class="google-plugin-main">
     <div class="tabs">
-      <el-tabs :stretch="true" type="border-card" v-model="tabIndex">
-        <el-tab-pane :name="item.id" :label="item.name" v-for="item in tabList" :key="item.id"></el-tab-pane>
+      <el-tabs :stretch="true" type="border-card" v-model="tabIndex" @tabChange="tabChange">
+        <el-tab-pane v-for="(item,e) in routerMain" :name="item.path" :key="e" :label="item.name" ></el-tab-pane>
       </el-tabs>
     </div>
     <el-scrollbar max-height="550px">
       <div class="page-com">
-        <Main v-show="tabIndex === 1"/>
-        <Hello v-show="tabIndex === 2"/>
+        <router-view />
       </div>
     </el-scrollbar>
   </div>
@@ -16,21 +15,14 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import Main from './pages/PageMain.vue'
-import Hello from './pages/PageHello.vue'
-import { listItemType } from '@popup/typeList'
+import { routerMain } from '@popup/router/routers'
+import { useRouter } from 'vue-router'
+const router = useRouter()
 
-const tabIndex = ref<number>(1)
-const tabList = ref<listItemType[]>([
-  {
-    id: 1,
-    name: 'tab1'
-  },
-  {
-    id: 2,
-    name: 'tab2'
-  }
-])
+const tabIndex = ref<string>('/')
+const tabChange = (name:string) => { // tab切换
+  router.push(name)
+}
 </script>
 
 <style lang="stylus">

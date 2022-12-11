@@ -1,6 +1,4 @@
-// pages
-export type listItemType = {
-  id: number,
-  name?: string,
-  time?: string,
+// jsonstring type
+export type jsonString = {
+  [propName:string] : string
 }

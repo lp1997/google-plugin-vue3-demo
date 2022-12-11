@@ -35,16 +35,22 @@ src
 ├─background -- 插件背景文件（浏览器运行则一直在运行/通信存在于浏览器方）
   ├─background.ts -- 通用事件
   └─menu.ts -- 鼠标右键菜单
+├─devtools -- 浏览器调试工具功能
+  ├─devtools.html -- 浏览器调试工具页面
+  └─devtools.ts -- 浏览器调试工具功能（可以用来监听网络请求）
 ├─js -- 引用的lib
   └─lib
-    └─jquery-2.1.3.min.js
+    └─...
 ├─plugins -- 打包的主要文件
   ├─main.ts -- 运行于当前web页面的js，可用于操控当前页面，相当于在调试工具的控制台操作（通信存在于web页面方）
-  ├─typeList.ts -- 定义类型
   └─manifest.json -- 配置文件（必须）
 ├─popup -- 插件页面（通信存在于插件方）
   ├─index.html
   ├─main.ts
+  ├─typeList.ts -- 定义类型
+  ├─router -- 路由
+    ├─routers.ts -- 路由列表
+    └─index.ts -- 路由配置
   └─components
     ├─App.vue
     └─pages
@@ -52,6 +58,7 @@ src
       └─PageMain.vue
 └─utils -- 工具函数
   ├─chromeUtils.ts -- chrome API相关函数
+  ├─utils.ts -- vue相关函数
   └─hotReload.ts -- 热打包配置文件，npm run watch依赖
 
 ```
