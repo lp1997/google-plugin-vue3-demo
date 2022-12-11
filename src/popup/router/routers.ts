@@ -2,19 +2,13 @@ export const routerMain = [
   {
     path: '/',
     name: 'PageMain',
-    isCom: true,
-    meta: {
-      title: 'PageMain'
-    },
+    title: '首页',
     component: import(/* webpackChunkName: "PageMain" */ '@/popup/components/pages/PageMain.vue')
   },
   {
     path: '/PageHello',
     name: 'PageHello',
-    isCom: true,
-    meta: {
-      title: 'PageHello'
-    },
+    title: 'Hello页',
     component: import(/* webpackChunkName: "PageHello" */ '@/popup/components/pages/PageHello.vue')
   }
 ]

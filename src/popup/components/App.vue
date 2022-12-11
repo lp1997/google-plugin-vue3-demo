@@ -2,7 +2,7 @@
   <div class="google-plugin-main">
     <div class="tabs">
       <el-tabs :stretch="true" type="border-card" v-model="tabIndex" @tabChange="tabChange">
-        <el-tab-pane v-for="(item,e) in routerMain" :name="item.path" :key="e" :label="item.name" ></el-tab-pane>
+        <el-tab-pane v-for="(item,e) in routerMain" :name="item.path" :key="e" :label="item.title" ></el-tab-pane>
       </el-tabs>
     </div>
     <el-scrollbar max-height="550px">
