@@ -55,6 +55,7 @@ src
     ├─App.vue
     └─pages
       ├─PageHello.vue
+      ├─PageSetting.vue
       └─PageMain.vue
 └─utils -- 工具函数
   ├─chromeUtils.ts -- chrome API相关函数
