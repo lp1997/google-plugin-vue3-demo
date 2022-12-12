@@ -1,6 +1,3 @@
-declare namespace ReturnType {
-  type id = number
-}
 // 信息存储
 export const localSet = (key:string, val:string) => {
   window.chrome.storage.sync.set({ [key]: val })
@@ -16,7 +13,7 @@ export const localRemove = (key:string) => {
   return window.chrome.storage.sync.remove(key)
 }
 
-export const getCurrentTabId = ():Promise<ReturnType.id> => { // 获取当前页面id
+export const getCurrentTabId = ():Promise<number> => { // 获取当前页面id
   return new Promise((resolve) => {
     window.chrome.tabs.query({ active: true, currentWindow: true }, (tabs:[{id:number}]) => {
       resolve(tabs[0].id)
