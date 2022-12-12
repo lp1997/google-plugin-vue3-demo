@@ -32,19 +32,19 @@ export const getPageInfo = () => { // 获取当前页面信息
   })
 }
 
-export const sendData2Main = (tabId:number, data:any, cb?:Function) => { // popup/background发送消息到main,并处理返回的信息(main发送消息，先发给background，background再转发给popup)
+export const sendData2Main = (tabId:number, data:any, cb?:Function) => { // 发送消息到main
   window.chrome.tabs.sendMessage(tabId, data, (res:any) => {
     cb && cb(res)
   })
 }
 
 export const receiveData = (cb?:Function) => { // 非popup接收信息
-  window.chrome.extension.onMessage.addListener((req:any, sender:any, sendRes:any) => {
+  window.chrome.runtime.onMessage.addListener((req:any, sender:any, sendRes:any) => {
     cb && cb(req, sender, sendRes)
   })
 }
 
-export const sendData = (data:any, cb?:Function) => { // 非popup发送信息
+export const sendData = (data:any, cb?:Function) => { // 发送信息给background
   window.chrome.runtime.sendMessage(data, (res:any) => { // 接收返回的消息
     cb && cb(res)
   })
