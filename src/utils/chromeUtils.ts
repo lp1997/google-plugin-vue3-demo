@@ -66,13 +66,13 @@ export const openNewPage = (url:string) => { // 页面打开新窗口链接
 }
 
 export const listenPageCreated = (cb?:Function) => { // 监听窗口新建
-  window.chrome.tabs.onCreated.addListener((res:string) => {
+  window.chrome.tabs.onCreated.addListener((res:any) => {
     cb && cb(res)
   })
 }
 
 export const listenPageActivated = (cb?:Function) => { // 监听窗口切换
-  window.chrome.tabs.onActivated.addListener((res:string) => {
+  window.chrome.tabs.onActivated.addListener((res:any) => {
     cb && cb(res)
   })
 }
