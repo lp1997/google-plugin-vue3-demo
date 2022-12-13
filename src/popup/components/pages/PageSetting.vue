@@ -35,7 +35,7 @@ const showFuncList = ref<boolean>(false) // 显示插件功能配置弹窗
 const checkList = ref<pageTabs[]>([])// 选择的功能列表
 const checkListSel = ref<pageTabs[]>([])// 选中未确认的功能列表
 
-localGet(['todayDataList', 'selTypeList', 'todayTipsData', 'pageFuncConfig']).then((res:any) => {
+localGet(['selTypeList']).then((res:any) => {
   if (res.selTypeList) {
     checkListSel.value = checkList.value = JSON.parse(res.selTypeList)
   }

@@ -66,5 +66,6 @@ src
 
 ### 相关学习文档
 
+- [说明与开发流程](https://note.youdao.com/s/EVzR5TNv)
 - [插件/页面间消息传递](https://blog.csdn.net/justdoshare/article/details/121667797)
 - [通过devTool劫持获取接口返回数据](https://blog.csdn.net/chantor7/article/details/124588045)
