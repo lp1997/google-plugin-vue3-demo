@@ -4,19 +4,19 @@ export const routerMain = [
     name: 'PageMain',
     title: '首页',
     isCom: true,
-    component: import(/* webpackChunkName: "PageMain" */ '@/popup/components/pages/PageMain.vue')
+    component: () => import(/* webpackChunkName: "PageMain" */ '@/popup/components/pages/PageMain.vue')
   },
   {
     path: '/PageSetting',
     name: 'PageSetting',
     title: '配置页',
     isCom: true,
-    component: import(/* webpackChunkName: "PageSetting" */ '@/popup/components/pages/PageSetting.vue')
+    component: () => import(/* webpackChunkName: "PageSetting" */ '@/popup/components/pages/PageSetting.vue')
   },
   {
     path: '/PageHello',
     name: 'PageHello',
     title: 'hello页',
-    component: import(/* webpackChunkName: "PageHello" */ '@/popup/components/pages/PageHello.vue')
+    component: () => import(/* webpackChunkName: "PageHello" */ '@/popup/components/pages/PageHello.vue')
   }
 ]
