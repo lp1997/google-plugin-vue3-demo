@@ -3,22 +3,19 @@ const { defineConfig } = require('@vue/cli-service')
 const path = require('path')
 
 // 复制文件到指定目录
+const distFileName = process.env.NODE_ENV === 'production' ? 'dist' : 'dist_local'
 const copyFiles = [
   {
     from: path.resolve('src/plugins/manifest.json'),
-    to: `${path.resolve('dist')}/manifest.json`
+    to: `${path.resolve(distFileName)}/manifest.json`
   },
   {
     from: path.resolve('src/assets'),
-    to: path.resolve('dist/assets')
-  },
-  {
-    from: path.resolve('src/js/lib'),
-    to: path.resolve('dist/js')
+    to: path.resolve(distFileName + '/assets')
   },
   {
     from: path.resolve('src/devtools/devtools.html'),
-    to: path.resolve('dist/')
+    to: path.resolve(distFileName + '/')
   }
 ]
 
@@ -50,7 +47,7 @@ module.exports = defineConfig({
   // 基本路径
   publicPath: process.env.NODE_ENV === 'production' ? '' : '/',
   // 构建时的输出目录
-  outputDir: 'dist',
+  outputDir: distFileName,
   // 放置静态资源的目录
   // assetsDir: 'static',
   // html 的输出路径
