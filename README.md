@@ -13,9 +13,13 @@ npm run watch
 ```
 
 ### Compiles and minifies for production
-
 ```
-npm run build
+npm run build:prod
+```
+
+### Compiles and minifies for local
+```
+npm run build:local
 ```
 
 ### Lints and fixes files
@@ -38,9 +42,6 @@ src
 ├─devtools -- 浏览器调试工具功能
   ├─devtools.html -- 浏览器调试工具页面
   └─devtools.ts -- 浏览器调试工具功能（可以用来监听网络请求）
-├─js -- 引用的lib
-  └─lib
-    └─...
 ├─plugins -- 打包的主要文件
   ├─main.ts -- 运行于当前web页面的js，可用于操控当前页面，相当于在调试工具的控制台操作（通信存在于web页面方）
   └─manifest.json -- 配置文件（必须）
